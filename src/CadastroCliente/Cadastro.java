@@ -258,7 +258,7 @@ boolean sexo=false;
         sql=sql+" values (";
         sql=sql + codigo + "," + nome +",";
         sql=sql + idade+","+peso+","+sexo;
-        sql=sql+")";
+        sql=sql+");";
 
         try{
             stm.execute(sql);
