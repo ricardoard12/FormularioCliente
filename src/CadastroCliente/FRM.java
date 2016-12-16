@@ -5,7 +5,6 @@
  */
 package CadastroCliente;
 import java.sql.*;
-import java.sql.ResultSet;
 
 public class FRM extends javax.swing.JFrame {
 
@@ -69,7 +68,6 @@ public class FRM extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("cadastro?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
         clienteQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Cliente c");
@@ -95,15 +93,12 @@ public class FRM extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         consuta = new javax.swing.JButton();
-        consuta1 = new javax.swing.JButton();
+        btnInserir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Clientes");
 
         jLabel1.setText("Nome:");
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, new javax.swing.JTable(), org.jdesktop.beansbinding.ELProperty.create("${selectedElement.nome}"), txtNome, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
 
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,13 +122,7 @@ public class FRM extends javax.swing.JFrame {
 
         jLabel2.setText("Idade:");
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, new javax.swing.JTable(), org.jdesktop.beansbinding.ELProperty.create("${selectedElement.idade}"), txtIdade, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-
         jLabel3.setText("Peso:");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, new javax.swing.JTable(), org.jdesktop.beansbinding.ELProperty.create("${selectedElement.peso}"), txtPeso, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
 
         jLabel4.setText("Sexo:");
 
@@ -202,7 +191,6 @@ public class FRM extends javax.swing.JFrame {
 
         jLabel5.setText("Codigo:");
 
-        txtCodigo.setEditable(false);
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoActionPerformed(evt);
@@ -216,10 +204,10 @@ public class FRM extends javax.swing.JFrame {
             }
         });
 
-        consuta1.setText("Novo Cadastro");
-        consuta1.addActionListener(new java.awt.event.ActionListener() {
+        btnInserir.setText("Inserir");
+        btnInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consuta1ActionPerformed(evt);
+                btnInserirActionPerformed(evt);
             }
         });
 
@@ -228,61 +216,61 @@ public class FRM extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(33, 33, 33)
-                                    .addComponent(btnPrimeiro)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnAnterior)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnProximo)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnUltimo))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(consuta)
-                                    .addGap(26, 26, 26)
-                                    .addComponent(consuta1)))
-                            .addGap(18, 18, 18)
-                            .addComponent(jButton2))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton3)
-                            .addGap(34, 34, 34)
-                            .addComponent(btnEditar)
-                            .addGap(40, 40, 40)
-                            .addComponent(jButton1)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnExcluir)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(24, 24, 24)
-                                    .addComponent(txtIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel1))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtNome)
-                                        .addComponent(txtCodigo)))))
-                        .addGap(28, 28, 28)
+                        .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(65, 65, 65))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(optMasculino)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(btnPrimeiro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnAnterior)
                                 .addGap(18, 18, 18)
-                                .addComponent(optFeminino)))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                                .addComponent(btnProximo)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnUltimo))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(consuta)
+                                .addGap(41, 41, 41)
+                                .addComponent(jButton2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel2)
+                                            .addGap(24, 24, 24)
+                                            .addComponent(txtIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel5)
+                                                .addComponent(jLabel1))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txtNome)
+                                                .addComponent(txtCodigo)))))
+                                .addGap(28, 28, 28)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(65, 65, 65))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(optMasculino)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(optFeminino))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnInserir)
+                        .addGap(13, 13, 13)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExcluir)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,16 +311,14 @@ public class FRM extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(btnEditar)
                     .addComponent(btnExcluir)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(btnInserir))
                 .addGap(81, 81, 81)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(consuta)
-                    .addComponent(jButton2)
-                    .addComponent(consuta1))
+                    .addComponent(jButton2))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
-
-        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -558,12 +544,6 @@ public class FRM extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
 
-    private void consuta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consuta1ActionPerformed
-        Cadastro m2=new Cadastro();
-        
-        m2.setVisible(true); 
-    }//GEN-LAST:event_consuta1ActionPerformed
-
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
 
@@ -583,6 +563,34 @@ public class FRM extends javax.swing.JFrame {
         }catch(Exception e)
         {System.out.println("Erro:"+e); }
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
+        // TODO add your handling code here:
+        String sql="";
+        String codigo,nome,idade,peso,sexo;
+
+        codigo =  this.txtCodigo.getText();
+        nome="'"+this.txtNome.getText()+"'";
+        idade= this.txtIdade.getText();
+        peso=this.txtPeso.getText();
+        sexo = (this.sexo)?"1":"0";
+
+        sql=sql+"Insert into cliente";
+        sql=sql+"(CODIGO, NOME, IDADE, PESO, SEXO)";
+        sql=sql+" values (";
+        sql=sql + codigo + "," + nome +",";
+        sql=sql + idade+","+peso+","+sexo;
+        sql=sql+")";
+
+        try{
+            stm.execute(sql);
+            this.mostrarDados();
+            this.mostrarTexto();
+        }catch(Exception e)
+        {System.out.println("Erro:"+e); }
+
+        System.out.println(sql);
+    }//GEN-LAST:event_btnInserirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -623,13 +631,13 @@ public class FRM extends javax.swing.JFrame {
     private javax.swing.JButton btnAnterior;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnInserir;
     private javax.swing.JButton btnPrimeiro;
     private javax.swing.JButton btnProximo;
     private javax.swing.JButton btnUltimo;
     private java.util.List<CadastroCliente.Cliente> clienteList;
     private javax.persistence.Query clienteQuery;
     private javax.swing.JButton consuta;
-    private javax.swing.JButton consuta1;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -645,6 +653,5 @@ public class FRM extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdade;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtPeso;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
